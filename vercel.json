@@ -2,15 +2,19 @@
     "version": 2,
     "env": {},
     "builds": [
-      { "src": "packages/api/src/index.js", "use": "@vercel/node" },
+      { "src": "packages/api/src/*", "use": "@vercel/node" },
       {
-        "src": "packages/app/package.json",
-        "use": "@vercel/node",
-        "config": { "distDir": ".next" }
+        "src": "packages/app/next.config.js",
+        "use": "@vercel/next",
+        "config": {
+          "installCommand": "yarn install",
+          "buildCommand": "next build",
+          "devCommand": "next dev"
+        }
       }
     ],
     "routes": [
-      { "src": "^/api/(.*)$", "dest": "packages/api/src/index.js" },
+      { "src": "^/api2/(.*)$", "dest": "packages/api/src/index.js" },
       {
         "src": "/",
         "dest": "packages/app/.next/index.html"

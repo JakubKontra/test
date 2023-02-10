@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 
 // Create GET request
-app.get("/test", (req, res) => {
+app.get("*", (req, res) => {
   res.send("Express on Vercel");
 });
 
