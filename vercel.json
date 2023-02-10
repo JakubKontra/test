@@ -1,0 +1,24 @@
+{
+    "version": 2,
+    "env": {},
+    "builds": [
+      { "src": "api/src/index.js", "use": "@vercel/node" },
+      {
+        "src": "app/package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "build" }
+      }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "api/src/index.js" },
+      
+      {
+        "src": "/",
+        "dest": "packages/coach-admin/.next/index.html"
+      },
+      {
+        "src": "/(.+)",
+        "dest": "packages/coach-admin/.next/$1"
+      }
+    ]
+  }
