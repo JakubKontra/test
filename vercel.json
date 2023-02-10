@@ -2,9 +2,9 @@
     "version": 2,
     "env": {},
     "builds": [
-      { "src": "api/src/index.js", "use": "@vercel/node" },
+      { "src": "packages/api/src/index.js", "use": "@vercel/node" },
       {
-        "src": "app/package.json",
+        "src": "packages/app/package.json",
         "use": "@vercel/static-build",
         "config": { "distDir": "build" }
       }
@@ -14,11 +14,11 @@
       
       {
         "src": "/",
-        "dest": "packages/coach-admin/.next/index.html"
+        "dest": "packages/app/.next/index.html"
       },
       {
         "src": "/(.+)",
-        "dest": "packages/coach-admin/.next/$1"
+        "dest": "packages/app/.next/$1"
       }
     ]
   }
