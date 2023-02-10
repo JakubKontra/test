@@ -10,8 +10,7 @@
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "api/src/index.js" },
-      
+      { "src": "^/api/(.*)$", "dest": "packages/api/src/index.js" },
       {
         "src": "/",
         "dest": "packages/app/.next/index.html"
