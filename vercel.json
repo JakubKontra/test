@@ -5,7 +5,7 @@
       { "src": "packages/api/src/index.js", "use": "@vercel/node" },
       {
         "src": "packages/app/package.json",
-        "use": "@vercel/build",
+        "use": "@vercel/node",
         "config": { "distDir": ".next" }
       }
     ],
